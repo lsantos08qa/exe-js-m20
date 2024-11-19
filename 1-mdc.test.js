@@ -1,9 +1,15 @@
-const calcularMDC = require('./1-mdc.js');
+const calcularMDC = require('./1-mdc');
 
-function testarCalcularMDC() {
-    console.log(calcularMDC(120, 48) === 24 ? "Teste 1 passou" : "Teste 1 falhou");
-    console.log(calcularMDC(81, 27) === 27 ? "Teste 2 passou" : "Teste 2 falhou");
-    console.log(calcularMDC(100, 25) === 25 ? "Teste 3 passou" : "Teste 3 falhou");
-}
+describe('Função calcularMDC', () => {
+    test('Deve retornar 24 como MDC de 120 e 48', () => {
+        expect(calcularMDC(120, 48)).toBe(24);
+    });
 
-testarCalcularMDC();
+    test('Deve retornar 27 como MDC de 81 e 27', () => {
+        expect(calcularMDC(81, 27)).toBe(27);
+    });
+
+    test('Deve retornar 25 como MDC de 100 e 25', () => {
+        expect(calcularMDC(100, 25)).toBe(25);
+    });
+});
